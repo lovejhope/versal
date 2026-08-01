@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Меню VS</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#f5f5f5;
+font-family:Arial,sans-serif;
+}
+
+header{
+background:#222;
+color:white;
+padding:18px;
+text-align:center;
+font-size:28px;
+font-weight:bold;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+.container{
+width:100%;
+max-width:900px;
+margin:auto;
+padding:15px;
+}
+
+.page{
+background:white;
+border-radius:15px;
+overflow:hidden;
+margin-bottom:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.15);
+transition:.3s;
+}
+
+.page:hover{
+transform:scale(1.01);
+}
+
+.page img{
+width:100%;
+height:auto;
+display:block;
+}
+
+footer{
+text-align:center;
+padding:20px;
+color:#777;
+font-size:14px;
+}
+
+/* Планшеты */
+@media (max-width:768px){
+
+header{
+font-size:24px;
+padding:15px;
+}
+
+.container{
+padding:10px;
+}
+
+.page{
+border-radius:12px;
+}
+
+}
+
+/* Телефоны */
+@media (max-width:480px){
+
+header{
+font-size:20px;
+padding:12px;
+}
+
+.container{
+padding:8px;
+}
+
+.page{
+margin-bottom:15px;
+border-radius:10px;
+}
+
+footer{
+font-size:12px;
+padding:15px;
+}
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+#topBtn{
+    display:none;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:#222;
+    color:#fff;
+    font-size:26px;
+    cursor:pointer;
+    z-index:9999;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+    transition:0.3s;
+}
+
+#topBtn:hover{
+    background:#b8860b;
+    transform:scale(1.1);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+Меню VS
+</header>
+
+<div class="container">
+
+<div class="page"><img src="images/IMG_8458.PNG"></div>
+<div class="page"><img src="images/IMG_8459.PNG"></div>
+<div class="page"><img src="images/IMG_8460.PNG"></div>
+<div class="page"><img src="images/IMG_8461.PNG"></div>
+<div class="page"><img src="images/IMG_8462.PNG"></div>
+<div class="page"><img src="images/IMG_8463.PNG"></div>
+<div class="page"><img src="images/IMG_8464.PNG"></div>
+<div class="page"><img src="images/IMG_8465.PNG"></div>
+<div class="page"><img src="images/IMG_8466.PNG"></div>
+<div class="page"><img src="images/IMG_8467.PNG"></div>
+
+</div>
+
+<footer>
+© VERSAL
+</footer>
+
+<button id="topBtn" onclick="topFunction()">↑</button>
+
+<script>
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", function () {
+    topBtn.style.display = window.scrollY > 300 ? "flex" : "none";
+});
+
+function topFunction() {
+    let current = window.scrollY;
+
+    const timer = setInterval(() => {
+        current -= 30; // Чем меньше число, тем медленнее поднимается
+        if (current <= 0) {
+            current = 0;
+            clearInterval(timer);
+        }
+        window.scrollTo(0, current);
+    }, 10);
+}
+</script>
+
+</body>
+</html>
